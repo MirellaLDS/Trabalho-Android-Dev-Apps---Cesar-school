@@ -8,10 +8,15 @@ class ScreenSlidePagerAdapter(fm: FragmentManager?) : FragmentStatePagerAdapter(
 
     private val NUM_PAGES = 5
 
+    companion object {
+        const val CAD_BOOK = 0
+        const val GRID_SLID = 1
+    }
+
     override fun getItem(position: Int): Fragment {
         return when(position){
-            0 -> CadBookFragment()
-            1 -> GridSlidePageFragment()
+            CAD_BOOK -> CadBookFragment()
+            GRID_SLID -> GridSlidePageFragment()
             else -> ScreenSlidePageFragment()
         }
     }
